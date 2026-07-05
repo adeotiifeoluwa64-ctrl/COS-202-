@@ -1,0 +1,59 @@
+# MATHEMATICAL CALCULATOR (MC)
+
+def calculator():
+    print("=" * 40)
+    print("      MATHEMATICAL CALCULATOR")
+    print("=" * 40)
+
+    while True:
+        print("\nOperations")
+        print("+  Addition")
+        print("-  Subtraction")
+        print("*  Multiplication")
+        print("/  Division")
+        print("^  Power")
+        print("%  Modulus")
+        print("C  Clear")
+        print("OFF Exit Calculator")
+
+        choice = input("\nEnter operation: ").upper()
+
+        if choice == "OFF":
+            print("Calculator is OFF")
+            break
+
+        elif choice == "C":
+            print("\nScreen Cleared")
+            continue
+
+        elif choice in ["+", "-", "*", "/", "^", "%"]:
+            num1 = float(input("Enter first number: "))
+            num2 = float(input("Enter second number: "))
+
+            if choice == "+":
+                result = num1 + num2
+
+            elif choice == "-":
+                result = num1 - num2
+
+            elif choice == "*":
+                result = num1 * num2
+
+            elif choice == "/":
+                if num2 == 0:
+                    print("Error! Division by zero.")
+                    continue
+                result = num1 / num2
+
+            elif choice == "^":
+                result = num1 ** num2
+
+            elif choice == "%":
+                result = num1 % num2
+
+            print("Result =", result)
+
+        else:
+            print("Invalid operation!")
+
+calculator()
